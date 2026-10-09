@@ -58,7 +58,7 @@ const SITE = {
       period: "March 2022 – April 2026",
       text: "Experienced VFX Coordinator specializing in compositing pipeline support and full-cycle production tracking from client brief to final delivery. Adept at collaborating with editorial teams and clients to align CG shot and footage naming conventions with internal pipelines, while proactively auditing assets to prevent production delays. Skilled in organizing compositing workflows, preparing footage, and structuring shot lists to track versions. A reliable team leader who plans daily assignments, facilitates client and vendor meetings, and executes strict quality control checks on final outputs to ensure error-free deliveries.",
       films: [
-        { year: 2026, title: "The Cursed War",         thai: "นาคี 3 ครุฑา นาคี",  tags: "In Cinema",                     youtube: "https://youtu.be/NA07oQzbFzQ" },
+        { year: 2026, title: "The Cursed War",         thai: "นาคี 3 ครุฑา นาคี",  tags: "IMAX | In Cinema",              youtube: "https://youtu.be/NA07oQzbFzQ" },
         { year: 2026, title: "Haunted Universities 4", thai: "เทอม 4",             tags: "On Netflix",                     youtube: "https://youtu.be/w8UDaA24-vA" },
         { year: 2026, title: "My Dearest Assassin",    thai: "เลือดรัก นักฆ่า",      tags: "Netflix Original",              youtube: "https://youtu.be/y1Qq_kPL5UU" },
         { year: 2026, title: "Omukade",                thai: "โอมุคาเดะ",           tags: "On Netflix",                       youtube: "https://youtu.be/-lOjAwV_sqw" },
@@ -90,8 +90,8 @@ const SITE = {
     {
       role: "Trainee DI Producer", company: "Kantana Post Production (Thailand)", logo: "images/kantana.png",
       period: "June 2021 – July 2021",
-      projects: "KOG Dating Agency EP.9–EP.12, Circle Line, Put Your Head On My Shoulder (2021), The Lake",
-      text: "Leveraging a Bachelor's Degree in a related field, I completed a Trainee DI Producer program at Kantana Post Production. During this time, I mastered the post-production process for movies, series, and TV shows, building both technical and management knowledge. I gained hands-on experience driving daily workflows for a TV show while directly assisting executive and senior producers on multiple projects.",
+      projects: "KOG Dating Agency EP.9–EP.12, Put Your Head On My Shoulder (2021), Circle Line, The Lake",
+      text: "Completed the Trainee DI Producer program at Kantana Post Production, building on a Bachelor's Degree in a related field. Gained a solid grounding in the post-production process for feature films, series, and TV shows, covering both the technical and management sides. Drove daily workflows for a TV show while directly assisting executive and senior producers across multiple projects.",
       films: [],
     },
   ],
@@ -137,9 +137,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
   padding-block: 18px; border-bottom: 1px solid var(--surface);
 }
 .topbar .brand { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--bright); }
-.topbar nav { display: flex; gap: 18px; }
-.topbar nav a { color: var(--fg); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
-.topbar nav a:hover { color: var(--bright); }
 
 /* ---------- Profile header ---------- */
 .profile {
@@ -162,7 +159,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
   display: inline-flex; gap: 6px; align-items: baseline; padding: 5px 12px; border-radius: 4px;
   background: var(--raised); color: var(--bright); font-size: 13px; transition: background .15s;
 }
-.contacts a span { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--fg); }
+.contacts a { align-items: center; }
+.contacts a svg { width: 15px; height: 15px; flex: none; fill: currentColor; color: var(--fg); }
+.contacts a:hover svg { color: var(--bright); }
 .contacts a:hover { background: #3c4757; }
 
 .stats { display: flex; gap: 0; }
@@ -212,6 +211,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
 
 .year { display: grid; gap: 12px; }
 .year + .year { margin-top: 12px; }
+.year[hidden] { display: none; }
 .year-label { display: flex; align-items: baseline; gap: 10px; }
 .year-label b { font-family: var(--font-display); font-size: 20px; color: var(--bright); font-variant-numeric: tabular-nums; }
 .posters { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 14px 10px; list-style: none; margin: 0; padding: 0; }
@@ -259,7 +259,6 @@ footer { margin-top: 48px; display: flex; justify-content: space-between; flex-w
   .job-head { grid-template-columns: 1fr; gap: 10px; }
   .posters { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 8px; }
   .poster .over { font-size: 12px; left: 6px; right: 6px; bottom: 6px; }
-  .topbar nav { display: none; }
 }
 </style>
 </head>
@@ -267,7 +266,6 @@ footer { margin-top: 48px; display: flex; justify-content: space-between; flex-w
 <div class="wrap" id="home">
   <header class="topbar">
     <a class="brand" href="#home" id="brand"></a>
-    <nav aria-label="Sections"><a href="#experience">Experience</a><a href="#films">Films</a><a href="#contact">Contact</a></nav>
   </header>
 
   <section class="profile" id="contact">
@@ -307,15 +305,25 @@ footer { margin-top: 48px; display: flex; justify-content: space-between; flex-w
   const imax = allFilms.filter(f => /imax/i.test(f.tags)).length;
 
   // Header
-  $("brand").textContent = SITE.name.split(" ").slice(0, 2).join(" ");
+  $("brand").textContent = SITE.name.split(" ").slice(0, 2).join(" ") + " Portfolio";
   $("photo").src = SITE.photo; $("photo").alt = SITE.name;
   $("name").textContent = SITE.name;
   $("nameThai").textContent = SITE.nameThai;
   $("meta").textContent = SITE.jobs[0].role + " at " + SITE.jobs[0].company + " · " + SITE.location;
+  // ไอคอนแทนคำ เลือกจาก label (Email / Line / LinkedIn)
+  const ICONS = {
+    email: '<path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5zm2 .9v11.6h16V6.4l-8 5.6zM5.4 6 12 10.6 18.6 6z"/>',
+    line: '<path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8.1-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8zM8.3 13.4H6.4a.5.5 0 0 1-.5-.5V9.1a.5.5 0 0 1 1 0v3.3h1.4a.5.5 0 0 1 0 1zm2 -.5a.5.5 0 0 1-1 0V9.1a.5.5 0 0 1 1 0zm4.6 0a.5.5 0 0 1-.9.3l-1.9-2.6v2.3a.5.5 0 0 1-1 0V9.1a.5.5 0 0 1 .9-.3l1.9 2.6V9.1a.5.5 0 0 1 1 0zm3.1-2.4a.5.5 0 0 1 0 1h-1.4v.9h1.4a.5.5 0 0 1 0 1h-1.9a.5.5 0 0 1-.5-.5V9.1a.5.5 0 0 1 .5-.5h1.9a.5.5 0 0 1 0 1h-1.4v.9z"/>',
+    linkedin: '<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/>',
+  };
+  const icon = (label) => {
+    const d = ICONS[String(label).toLowerCase()];
+    return d ? `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>` : `<span>${esc(label)}</span>`;
+  };
   $("contacts").innerHTML = SITE.contacts.map(c =>
-    `<li><a href="${esc(c.href)}" target="_blank" rel="noopener"><span>${esc(c.label)}</span>${esc(c.value)}</a></li>`).join("");
+    `<li><a href="${esc(c.href)}" target="_blank" rel="noopener" aria-label="${esc(c.label)}: ${esc(c.value)}">${icon(c.label)}${esc(c.value)}</a></li>`).join("");
   $("stats").innerHTML = [
-    [allFilms.length, "Titles"],
+    [allFilms.length + "+", "Titles"],
     [imax, "IMAX"],
     [yearsActive, "Years"],
   ].map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
