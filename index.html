@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Waiy Boorana Portfolio</title>
+<meta name="description" content="Waiy Boorana Talangkij — VFX Producer, Bangkok">
+<meta property="og:title" content="Waiy Boorana Portfolio">
+<meta property="og:description" content="VFX Producer · Bangkok, Thailand">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<!-- ==========================================================
+     ส่วนข้อมูล (แก้ตรงนี้ที่เดียวพอ)
+     - เพิ่มผลงานใหม่: ก๊อปบรรทัดใน projects มาวางแล้วแก้ข้อความ
+       ใส่ลิงก์ YouTube อย่างเดียว รูปปกจะดึงจาก YouTube ให้เอง
+     - ถ้าอยากใช้โปสเตอร์ของตัวเอง ใส่ poster: "images/ชื่อไฟล์.jpg"
+     - ปีจะจัดกลุ่มให้อัตโนมัติ เรียงจากใหม่ไปเก่า
+     ========================================================== -->
+<script>
+const SITE = {
+  name: "Waiy Boorana Talangkij",
+  nameThai: "หวาย บูรณา แถลงกิจ",
+  location: "Bangkok, Thailand",
+  // อัปโหลดรูปโปรไฟล์ชื่อ photo.jpg ไว้ข้างไฟล์นี้ แล้วเปลี่ยนเป็น "photo.jpg"
+  photo: "https://waiyboorana.carrd.co/assets/images/image02.jpg",
+
+  contacts: [
+    { label: "Email",    value: "boorana.tala@gmail.com", href: "mailto:boorana.tala@gmail.com" },
+    { label: "Line",     value: "Add on Line",            href: "https://line.me/ti/p/~0917103855" },
+    { label: "LinkedIn", value: "in/booranatala",         href: "https://www.linkedin.com/in/booranatala" },
+  ],
+
+  // ประสบการณ์ทำงาน เรียงจากใหม่ไปเก่า
+  // logo: ใส่ path รูปโลโก้ได้ (เช่น "images/fatcat.png") ถ้าเว้นว่างจะแสดงตัวอักษรย่อแทน
+  // showProjects: true = ใต้ตำแหน่งนี้จะมีปุ่มไปดูผลงานด้านล่าง
+  jobs: [
+    {
+      role: "VFX Producer", company: "Fatcat Studios", logo: "",
+      period: "July 2026 – Present",
+      projects: "Inherit, Prasert",
+      text: "Oversees the end-to-end VFX pipeline for Thai feature films, managing project execution from initial budget estimation to final delivery. Communicates continuously with clients, DI producers, and production crews to ensure technical assets are fully prepared for post-production. Collaborates closely with Department Leads to track daily progress, deliver actionable revision feedback, and guarantee on-time client deliveries."
+    },
+    {
+      role: "VFX Coordinator", company: "Chaya Pictures", logo: "",
+      period: "May 2026 – June 2026",
+      projects: "BLUELOCK (2026), HENRY's First Dates",
+      text: "Brings hands-on experience managing production workflows and driving project timelines from client brief to final delivery. Adept at communicating across clients, producers, supervisors, and artists while managing assets, tracking vendors, and handling outsource financials to ensure high-quality, on-time execution."
+    },
+    {
+      role: "VFX Coordinator", company: "Fatcat Studios", logo: "",
+      period: "March 2022 – April 2026",
+      showProjects: true,
+      text: "Experienced VFX Coordinator specializing in compositing pipeline support and full-cycle production tracking from client brief to final delivery. Adept at collaborating with editorial teams and clients to align CG shot and footage naming conventions with internal pipelines, while proactively auditing assets to prevent production delays. Skilled in organizing compositing workflows, preparing footage, and structuring shot lists to track versions. A reliable team leader who plans daily assignments, facilitates client and vendor meetings, and executes strict quality control checks on final outputs to ensure error-free deliveries."
+    },
+    {
+      role: "Trainee DI Producer", company: "Kantana Post Production (Thailand)", logo: "",
+      period: "June 2021 – July 2021",
+      projects: "KOG Dating Agency EP.9–EP.12, Circle Line, Put Your Head On My Shoulder (2021), The Lake",
+      text: "Leveraging a Bachelor's Degree in a related field, I completed a Trainee DI Producer program at Kantana Post Production. During this time, I mastered the post-production process for movies, series, and TV shows, building both technical and management knowledge. I gained hands-on experience driving daily workflows for a TV show while directly assisting executive and senior producers on multiple projects."
+    },
+  ],
+
+  projectsTitle: "Selected Projects at Fatcat Studios",
+
+  // ผลงาน: 1 เรื่อง = 1 บรรทัด  (tags คั่นด้วย | )
+  projects: [
+    { year: 2026, title: "The Cursed War",         thai: "นาคี 3 ครุฑา นาคี",      tags: "In Cinema",                           youtube: "https://youtu.be/NA07oQzbFzQ" },
+    { year: 2026, title: "Haunted Universities 4", thai: "เทอม 4",                 tags: "In Cinema",                           youtube: "https://youtu.be/w8UDaA24-vA" },
+    { year: 2026, title: "My Dearest Assassin",    thai: "เลือดรัก นักฆ่า",          tags: "Netflix Original",                    youtube: "https://youtu.be/y1Qq_kPL5UU" },
+    { year: 2026, title: "Omukade",                thai: "โอมุคาเดะ",               tags: "Available on Netflix",                youtube: "https://youtu.be/-lOjAwV_sqw" },
+
+    { year: 2025, title: "Our House",              thai: "ข้างบ้าน",                tags: "Available on Netflix",                youtube: "https://youtu.be/eWFlUmkrPcY" },
+    { year: 2025, title: "My Boo 2",               thai: "อนงค์ 2 สามสี่ชาติ",       tags: "Available on Netflix",                youtube: "https://youtu.be/2MO6sqLldrw" },
+    { year: 2025, title: "4 Tigers",               thai: "เสือ",                   tags: "Available on TrueVisions",            youtube: "https://youtu.be/NbYwrVt_bEM" },
+    { year: 2025, title: "Death Whisperer 3",      thai: "ธี่หยด 3",                tags: "IMAX | Available on Netflix",         youtube: "https://youtu.be/DXV3x2Htbyg" },
+    { year: 2025, title: "ATTACK 13",              thai: "วิญญาณเลขที่ 13",         tags: "Available on Netflix",                youtube: "https://youtu.be/SOYPznKC0Lw" },
+    { year: 2025, title: "Eternal Bond",           thai: "นาคบรรพ์",               tags: "Available on Netflix",                youtube: "https://youtu.be/fzidjiI9tWc" },
+
+    { year: 2024, title: "The Cliche",             thai: "คุณชายน์",               tags: "Available on Netflix",                youtube: "https://youtu.be/8AesDdVxNkM" },
+    { year: 2024, title: "Death Whisperer 2",      thai: "ธี่หยด 2",                tags: "IMAX | Available on Netflix",         youtube: "https://www.youtube.com/watch?v=xENZ06Ewtos" },
+    { year: 2024, title: "Bangkok Breaking",       thai: "ฝ่านรกเมืองเทวดา",        tags: "Netflix Original",                    youtube: "https://youtu.be/ObLf5KH465A" },
+    { year: 2024, title: "Taklee Genesis",         thai: "ตาคลี เจเนซิส",           tags: "IMAX | Available on Prime",           youtube: "https://youtu.be/pHXRTOhQqkI" },
+    { year: 2024, title: "The Cursed Land",        thai: "แดนสาป",                 tags: "Available on Netflix",                youtube: "https://youtu.be/y8wNrzEMayI" },
+    { year: 2024, title: "Doctor Climax",          thai: "ปุจฉาพาเสียว",            tags: "Netflix Original | 8 Episodes",       youtube: "https://youtu.be/KeUm_2u4hNk" },
+    { year: 2024, title: "My Boo",                 thai: "อนงค์",                  tags: "Available on Netflix",                youtube: "https://youtu.be/I1hy3yLdvtE" },
+
+    { year: 2023, title: "Analog Squad",           thai: "ทีมรักนักหลอก",           tags: "Netflix Original | 8 Episodes",       youtube: "https://youtu.be/m6KAeB8Or10" },
+    { year: 2023, title: "The X-Treme Riders",     thai: "ปล้นทะลุไมล์",            tags: "Available on Prime",                  youtube: "https://youtu.be/7aoDd5iIeFU" },
+    { year: 2023, title: "Death Whisperer",        thai: "ธี่หยด",                  tags: "IMAX | Available on Netflix",         youtube: "https://youtu.be/avtdfHis_3k" },
+    { year: 2023, title: "Inhuman Kiss 2",         thai: "แสงกระสือ 2",             tags: "Available on Netflix",                youtube: "https://youtu.be/1II0U1_dKWk" },
+
+    { year: 2022, title: "The One Hundred",        thai: "๑๐๐ ร้อยขา",              tags: "Available on Prime",                  youtube: "https://youtu.be/jHghvHMTDXU" },
+    { year: 2022, title: "Leio",                   thai: "ไลโอโคตรแย้ยักษ์",          tags: "Available on Netflix",                youtube: "https://youtu.be/oZq-5AnslPM" },
+  ],
+};
+</script>
+<!-- ================= จบส่วนข้อมูล (ด้านล่างไม่ต้องแก้) ================= -->
+
+<style>
+/* Layout: single column "call sheet" — slate header, credits-style experience list, year-reel gallery */
+:root {
+  --bg: #f3f2ef;
+  --surface: #ffffff;
+  --fg: #16181c;
+  --muted: #5d6169;
+  --line: #d9d7d1;
+  --accent: #c2410c;        /* tungsten / slate orange */
+  --accent-soft: #fbe7dc;
+  --chip: #ebe9e4;
+  --font-display: "Bai Jamjuree", "IBM Plex Sans Thai", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Thai", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121316; --surface: #1b1d21; --fg: #ecebe7; --muted: #9a9ea6;
+    --line: #2c2f35; --accent: #f08a4b; --accent-soft: #3a2418; --chip: #24272c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121316; --surface: #1b1d21; --fg: #ecebe7; --muted: #9a9ea6;
+  --line: #2c2f35; --accent: #f08a4b; --accent-soft: #3a2418; --chip: #24272c;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+  padding-inline: 20px; padding-block: 0 48px;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 960px; margin: 0 auto; }
+
+.label {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: center;
+  padding-block: 72px 56px; border-bottom: 1px solid var(--line);
+}
+.photo {
+  width: 200px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px;
+  background: var(--chip);
+}
+.hero-text { min-width: 0; display: grid; gap: 14px; }
+.hero h1 {
+  margin: 0; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(36px, 6vw, 64px); line-height: 1.02; letter-spacing: -.01em;
+  text-wrap: balance;
+}
+.hero .thai { font-size: 18px; color: var(--muted); margin: 0; }
+.slate {
+  display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--font-mono); font-size: 13px;
+  color: var(--muted);
+}
+.slate b { color: var(--accent); font-weight: 500; }
+.contacts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; padding: 0; list-style: none; }
+.contacts a {
+  display: inline-flex; align-items: baseline; gap: 8px; text-decoration: none;
+  padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); font-size: 14px; transition: border-color .15s;
+}
+.contacts a:hover { border-color: var(--accent); }
+.contacts a span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+
+/* ---------- Section heads ---------- */
+section { padding-block: 56px 8px; }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+.sec-head h2 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 28px; text-wrap: balance; }
+
+/* ---------- Experience (credits list) ---------- */
+.jobs { display: grid; gap: 0; }
+.job {
+  display: grid; grid-template-columns: 56px 1fr; gap: 20px;
+  padding-block: 28px; border-top: 1px solid var(--line);
+}
+.job:first-child { border-top: 0; padding-top: 0; }
+.mark {
+  width: 56px; height: 56px; border-radius: 8px; background: var(--chip);
+  display: grid; place-items: center; overflow: hidden;
+  font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--muted);
+}
+.mark img { width: 100%; height: 100%; object-fit: contain; }
+.job-body { min-width: 0; display: grid; gap: 6px; }
+.job-top { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.role {
+  font-family: var(--font-display); font-weight: 600; font-size: 20px;
+  background: var(--accent-soft); color: var(--fg); padding: 0 6px; border-radius: 3px;
+}
+.company { font-weight: 600; }
+.period { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.selected { font-size: 14px; color: var(--muted); font-style: italic; }
+.job p { margin: 4px 0 0; max-width: 68ch; color: var(--fg); }
+.jump {
+  justify-self: start; margin-top: 8px; font-family: var(--font-mono); font-size: 13px;
+  color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor;
+}
+
+/* ---------- Gallery ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters button {
+  font: 500 13px var(--font-mono); padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+.filters button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+.year { margin-top: 40px; }
+.year:first-of-type { margin-top: 0; }
+.year-head {
+  display: flex; align-items: baseline; gap: 14px; margin-bottom: 16px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+.year-head h3 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 32px; font-variant-numeric: tabular-nums; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px 18px; }
+.card { text-decoration: none; display: grid; gap: 8px; min-width: 0; }
+.thumb {
+  position: relative; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 6px; overflow: hidden;
+  background: var(--chip);
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.thumb::after {
+  content: "▶"; position: absolute; inset: auto 10px 10px auto; width: 32px; height: 32px;
+  display: grid; place-items: center; border-radius: 50%; font-size: 12px;
+  background: rgba(0,0,0,.6); color: #fff; opacity: 0; transition: opacity .2s;
+}
+.card:hover .thumb img { transform: scale(1.04); }
+.card:hover .thumb::after, .card:focus-visible .thumb::after { opacity: 1; }
+.card-title { font-family: var(--font-display); font-weight: 600; font-size: 17px; line-height: 1.25; }
+.card-thai { font-size: 14px; color: var(--muted); line-height: 1.3; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.tag { font-family: var(--font-mono); font-size: 11px; padding: 2px 7px; border-radius: 3px; background: var(--chip); color: var(--muted); }
+.tag.hot { background: var(--accent-soft); color: var(--accent); }
+
+footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+footer a { text-decoration: none; }
+
+@media (max-width: 640px) {
+  .hero { grid-template-columns: 1fr; gap: 24px; padding-block: 40px 40px; }
+  .photo { width: 140px; }
+  .job { grid-template-columns: 1fr; gap: 12px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+  .card-title { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="home">
+  <header class="hero">
+    <img class="photo" id="photo" alt="">
+    <div class="hero-text">
+      <div class="slate" id="slate"></div>
+      <h1 id="name"></h1>
+      <p class="thai" id="nameThai"></p>
+      <ul class="contacts" id="contacts"></ul>
+    </div>
+  </header>
+
+  <section aria-labelledby="exp-h">
+    <div class="sec-head"><h2 id="exp-h">Experience</h2><span class="label" id="exp-count"></span></div>
+    <div class="jobs" id="jobs"></div>
+  </section>
+
+  <section id="projects" aria-labelledby="proj-h">
+    <div class="sec-head">
+      <div><span class="label" id="proj-count"></span><h2 id="proj-h"></h2></div>
+      <div class="filters" id="filters" role="group" aria-label="Filter by year"></div>
+    </div>
+    <div id="gallery"></div>
+  </section>
+
+  <footer>
+    <span class="label" id="foot-name"></span>
+    <a class="label" href="#home">Back to top ↑</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  // ดึง ID วิดีโอจากลิงก์ YouTube ได้ทุกรูปแบบ (youtu.be / watch?v= / shorts)
+  function ytId(url) {
+    const m = String(url || "").match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/);
+    return m ? m[1] : "";
+  }
+  const initials = (name) => name.split(/\s+/).filter(w => /^[A-Za-z]/.test(w)).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+
+  // Hero
+  document.title = SITE.name.split(" ")[0] + " " + SITE.name.split(" ")[1] + " Portfolio";
+  $("photo").src = SITE.photo; $("photo").alt = SITE.name;
+  $("name").textContent = SITE.name;
+  $("nameThai").textContent = SITE.nameThai;
+  const current = SITE.jobs[0];
+  $("slate").innerHTML =
+    `<span><b>●</b> ${esc(current.role)} · ${esc(current.company)}</span><span>${esc(SITE.location)}</span>`;
+  $("contacts").innerHTML = SITE.contacts.map(c =>
+    `<li><a href="${esc(c.href)}" target="_blank" rel="noopener"><span>${esc(c.label)}</span>${esc(c.value)}</a></li>`).join("");
+  $("foot-name").textContent = "© " + new Date().getFullYear() + " " + SITE.name;
+
+  // Experience
+  $("exp-count").textContent = SITE.jobs.length + " roles";
+  $("jobs").innerHTML = SITE.jobs.map(j => `
+    <article class="job">
+      <div class="mark" aria-hidden="true">${j.logo ? `<img src="${esc(j.logo)}" alt="">` : esc(initials(j.company))}</div>
+      <div class="job-body">
+        <div class="job-top"><span class="role">${esc(j.role)}</span><span class="company">${esc(j.company)}</span></div>
+        <span class="period">${esc(j.period)}</span>
+        ${j.projects ? `<span class="selected">Selected Projects: ${esc(j.projects)}</span>` : ""}
+        <p>${esc(j.text)}</p>
+        ${j.showProjects ? `<a class="jump" href="#projects">View ${SITE.projects.length} selected projects ↓</a>` : ""}
+      </div>
+    </article>`).join("");
+
+  // Gallery
+  $("proj-h").textContent = SITE.projectsTitle;
+  const years = [...new Set(SITE.projects.map(p => p.year))].sort((a, b) => b - a);
+  $("proj-count").textContent = SITE.projects.length + " titles · " + years[years.length - 1] + "–" + years[0];
+
+  function card(p) {
+    const id = ytId(p.youtube);
+    const img = p.poster || (id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : "");
+    const tags = String(p.tags || "").split("|").map(t => t.trim()).filter(Boolean);
+    return `
+      <a class="card" href="${esc(p.youtube)}" target="_blank" rel="noopener">
+        <div class="thumb">${img ? `<img src="${esc(img)}" alt="${esc(p.title)} trailer" loading="lazy">` : ""}</div>
+        <div><div class="card-title">${esc(p.title)}</div><div class="card-thai">${esc(p.thai)}</div></div>
+        <div class="tags">${tags.map(t => `<span class="tag${/imax|original|cinema/i.test(t) ? " hot" : ""}">${esc(t)}</span>`).join("")}</div>
+      </a>`;
+  }
+
+  $("gallery").innerHTML = years.map(y => {
+    const items = SITE.projects.filter(p => p.year === y);
+    return `<div class="year" data-year="${y}">
+      <div class="year-head"><h3>${y}</h3><span class="label">${items.length} ${items.length === 1 ? "title" : "titles"}</span></div>
+      <div class="grid">${items.map(card).join("")}</div>
+    </div>`;
+  }).join("");
+
+  const filters = ["All", ...years];
+  $("filters").innerHTML = filters.map((f, i) =>
+    `<button type="button" id="f-${f}" data-f="${f}" aria-pressed="${i === 0}">${f}</button>`).join("");
+  $("filters").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    $("filters").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    document.querySelectorAll(".year").forEach(el => {
+      el.hidden = !(b.dataset.f === "All" || el.dataset.year === b.dataset.f);
+    });
+  });
+})();
+</script>
+</body>
+</html>
