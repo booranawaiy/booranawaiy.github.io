@@ -136,12 +136,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
   display: flex; justify-content: space-between; align-items: center; gap: 12px;
   padding-block: 18px; border-bottom: 1px solid var(--surface);
 }
-/* Brand: rounded wordmark, letters overlap a touch, orange / green / blue like a film-diary logo */
-.topbar .brand { display: inline-flex; align-items: center; font-family: "Nunito", var(--font-body); font-weight: 900; font-size: 24px; line-height: 1; letter-spacing: -.11em; isolation: isolate; }
+/* Brand: rounded uppercase wordmark, letters overlap a touch — PORT orange, FO green, LIO blue */
+.topbar .brand { display: inline-flex; align-items: center; font-family: "Nunito", var(--font-body); font-weight: 900; font-size: 26px; line-height: 1; letter-spacing: -.12em; isolation: isolate; }
 .brand span { mix-blend-mode: screen; }
-.brand span:nth-child(3n+1) { color: var(--orange); }
-.brand span:nth-child(3n+2) { color: var(--green); }
-.brand span:nth-child(3n+3) { color: var(--blue); }
+.brand .o { color: var(--orange); }
+.brand .g { color: var(--green); }
+.brand .b { color: var(--blue); }
 
 /* ---------- Profile header ---------- */
 .profile {
@@ -310,7 +310,8 @@ footer { margin-top: 48px; display: flex; justify-content: space-between; flex-w
   const imax = allFilms.filter(f => /imax/i.test(f.tags)).length;
 
   // Header
-  $("brand").innerHTML = [..."Portfolio"].map(c => `<span aria-hidden="true">${c}</span>`).join("");
+  $("brand").innerHTML = [["PORT", "o"], ["FO", "g"], ["LIO", "b"]]
+    .map(([part, cls]) => [...part].map(c => `<span class="${cls}" aria-hidden="true">${c}</span>`).join("")).join("");
   $("photo").src = SITE.photo; $("photo").alt = SITE.name;
   $("name").textContent = SITE.name;
   $("nameThai").textContent = SITE.nameThai;
