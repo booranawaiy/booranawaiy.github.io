@@ -9,7 +9,7 @@
 <meta property="og:description" content="VFX Producer · Bangkok, Thailand">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Nunito:wght@900&display=swap">
 
 <!-- ==========================================================
      ส่วนข้อมูล (แก้ตรงนี้ที่เดียวพอ)
@@ -136,7 +136,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
   display: flex; justify-content: space-between; align-items: center; gap: 12px;
   padding-block: 18px; border-bottom: 1px solid var(--surface);
 }
-.topbar .brand { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--bright); }
+/* Brand: rounded wordmark, letters overlap a touch, orange / green / blue like a film-diary logo */
+.topbar .brand { display: inline-flex; align-items: center; font-family: "Nunito", var(--font-body); font-weight: 900; font-size: 24px; line-height: 1; letter-spacing: -.11em; isolation: isolate; }
+.brand span { mix-blend-mode: screen; }
+.brand span:nth-child(3n+1) { color: var(--orange); }
+.brand span:nth-child(3n+2) { color: var(--green); }
+.brand span:nth-child(3n+3) { color: var(--blue); }
 
 /* ---------- Profile header ---------- */
 .profile {
@@ -265,7 +270,7 @@ footer { margin-top: 48px; display: flex; justify-content: space-between; flex-w
 <body>
 <div class="wrap" id="home">
   <header class="topbar">
-    <a class="brand" href="#home" id="brand"></a>
+    <a class="brand" href="#home" id="brand" aria-label="Portfolio"></a>
   </header>
 
   <section class="profile" id="contact">
@@ -305,7 +310,7 @@ footer { margin-top: 48px; display: flex; justify-content: space-between; flex-w
   const imax = allFilms.filter(f => /imax/i.test(f.tags)).length;
 
   // Header
-  $("brand").textContent = SITE.name.split(" ").slice(0, 2).join(" ") + " Portfolio";
+  $("brand").innerHTML = [..."Portfolio"].map(c => `<span aria-hidden="true">${c}</span>`).join("");
   $("photo").src = SITE.photo; $("photo").alt = SITE.name;
   $("name").textContent = SITE.name;
   $("nameThai").textContent = SITE.nameThai;
