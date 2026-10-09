@@ -9,7 +9,7 @@
 <meta property="og:description" content="VFX Producer · Bangkok, Thailand">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Nunito:wght@900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=League+Spartan:wght@900&display=swap">
 
 <!-- ==========================================================
      ส่วนข้อมูล (แก้ตรงนี้ที่เดียวพอ)
@@ -136,12 +136,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
   display: flex; justify-content: space-between; align-items: center; gap: 12px;
   padding-block: 18px; border-bottom: 1px solid var(--surface);
 }
-/* Brand: rounded uppercase wordmark, letters overlap a touch — PORT orange, FO green, LIO blue */
-.topbar .brand { display: inline-flex; align-items: center; font-family: "Nunito", var(--font-body); font-weight: 900; font-size: 26px; line-height: 1; letter-spacing: -.12em; isolation: isolate; }
-.brand span { mix-blend-mode: screen; }
-.brand .o { color: var(--orange); }
-.brand .g { color: var(--green); }
-.brand .b { color: var(--blue); }
+/* Brand: PORTFOLIO wordmark — heavy geometric letters that overlap; overlaps turn white */
+.topbar .brand { display: inline-flex; align-items: center; height: 30px; }
+.brand svg { height: 30px; width: auto; overflow: visible; }
+.brand text { font-family: "League Spartan", var(--font-body); font-weight: 900; font-size: 40px; letter-spacing: -.16em; }
 
 /* ---------- Profile header ---------- */
 .profile {
@@ -310,8 +308,23 @@ footer { margin-top: 48px; display: flex; justify-content: space-between; flex-w
   const imax = allFilms.filter(f => /imax/i.test(f.tags)).length;
 
   // Header
-  $("brand").innerHTML = [["PORT", "o"], ["FO", "g"], ["LIO", "b"]]
-    .map(([part, cls]) => [...part].map(c => `<span class="${cls}" aria-hidden="true">${c}</span>`).join("")).join("");
+  // Wordmark: PORT orange, FO green, LIO blue; where two letters overlap the overlap is drawn white
+  function drawBrand() {
+    const word = [..."PORTFOLIO"], tone = "ooooggbbb", col = { o: "#ff8000", g: "#00e054", b: "#40bcf4" };
+    const text = (fill) => `<text x="0" y="32">${word.map((c, i) => `<tspan fill="${fill(i)}">${c}</tspan>`).join("")}</text>`;
+    let defs = "", over = "";
+    for (let i = 0; i < word.length - 1; i++) {
+      defs += `<mask id="bm${i}" maskUnits="userSpaceOnUse" x="-10" y="-10" width="1000" height="60">${text(j => j === i ? "#fff" : "transparent")}</mask>`;
+      over += `<g mask="url(#bm${i})">${text(j => j === i + 1 ? "#fff" : "transparent")}</g>`;
+    }
+    const svg = $("brand").querySelector("svg") || $("brand").appendChild(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
+    svg.setAttribute("aria-hidden", "true");
+    svg.innerHTML = `<defs>${defs}</defs>${text(i => col[tone[i]])}${over}`;
+    const bb = svg.querySelector(":scope > text").getBBox();
+    svg.setAttribute("viewBox", `${bb.x} ${bb.y} ${bb.width} ${bb.height}`);
+  }
+  drawBrand();
+  if (document.fonts) document.fonts.ready.then(drawBrand);
   $("photo").src = SITE.photo; $("photo").alt = SITE.name;
   $("name").textContent = SITE.name;
   $("nameThai").textContent = SITE.nameThai;
