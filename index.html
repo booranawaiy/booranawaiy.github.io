@@ -16,7 +16,7 @@
      - ผลงานอยู่ใน films ของแต่ละตำแหน่งงาน
        เพิ่มเรื่องใหม่: ก๊อปบรรทัดเดิมมาวางแล้วแก้ข้อความ
      - ใส่ลิงก์ YouTube อย่างเดียว รูปปกจะดึงจาก YouTube ให้เอง
-       ถ้ามีโปสเตอร์แนวตั้ง ใส่ poster: "posters/ชื่อไฟล์.jpg" จะสวยกว่า
+       ถ้ามีโปสเตอร์แนวตั้ง ใส่ poster: "images/posters/ชื่อไฟล์.jpg" จะสวยกว่า
      - tags คั่นด้วย |   ปีจัดกลุ่มให้อัตโนมัติ เรียงจากใหม่ไปเก่า
      - ตำแหน่งที่ยังไม่มี films ใส่ชื่อผลงานเป็นข้อความใน projects ได้
      ========================================================== -->
@@ -42,8 +42,8 @@ const SITE = {
       period: "July 2026 – Present",
       text: "Oversees the end-to-end VFX pipeline for feature films and series, managing projects from initial budget estimation through final delivery. Communicates regularly with clients, DI producers, and production crews to ensure technical assets are fully prepared for post-production. Collaborates closely with Department Leads to track daily progress, provide actionable revision feedback, and ensure on-time client deliveries.",
       films: [
-        { year: 2026, title: "Prasert",                thai: "ประเสริฐ",             tags: "In Cinema",                     youtube: "https://youtu.be/qgq2sqSMbzk" },
-        { year: 2026, title: "Inherit",                thai: "คุณยายวรนาฏ",         tags: "In Cinema",                     youtube: "https://youtu.be/Iho_Pe9VqkM" },
+        { year: 2026, title: "Prasert",                thai: "ประเสริฐ",             tags: "In Cinema",                     youtube: "https://youtu.be/qgq2sqSMbzk", poster: "images/posters/prasert.jpg" },
+        { year: 2026, title: "Inherit",                thai: "คุณยายวรนาฏ",         tags: "In Cinema",                     youtube: "https://youtu.be/Iho_Pe9VqkM", poster: "images/posters/inherit.jpg" },
       ],
     },
     {
@@ -58,33 +58,33 @@ const SITE = {
       period: "March 2022 – April 2026",
       text: "Supported the compositing pipeline and managed production tracking from client brief to final delivery. Collaborated with editorial teams and clients to align CG shot and footage naming conventions with internal pipelines while proactively auditing assets to prevent production delays. Organized compositing workflows, prepared footage, and structured shot lists to track versions. Led daily assignments, facilitated client and vendor meetings, and conducted quality control checks on final outputs to ensure accurate, high-quality deliveries.",
       films: [
-        { year: 2026, title: "The Cursed War",         thai: "นาคี 3 ครุฑา นาคี",  tags: "IMAX | In Cinema",              youtube: "https://youtu.be/uyJb3TOlhIc" },
-        { year: 2026, title: "Haunted Universities 4", thai: "เทอม 4",             tags: "On Netflix",                     youtube: "https://youtu.be/w8UDaA24-vA" },
-        { year: 2026, title: "My Dearest Assassin",    thai: "เลือดรัก นักฆ่า",      tags: "Netflix Original",              youtube: "https://youtu.be/y1Qq_kPL5UU" },
-        { year: 2026, title: "Omukade",                thai: "โอมุคาเดะ",           tags: "On Netflix",                       youtube: "https://youtu.be/enIpsJTMLUU" },
+        { year: 2026, title: "The Cursed War",         thai: "นาคี 3 ครุฑา นาคี",  tags: "IMAX | In Cinema",              youtube: "https://youtu.be/uyJb3TOlhIc", poster: "images/posters/the-cursed-war.jpg" },
+        { year: 2026, title: "Haunted Universities 4", thai: "เทอม 4",             tags: "On Netflix",                     youtube: "https://youtu.be/w8UDaA24-vA", poster: "images/posters/haunted-universities-4.jpg" },
+        { year: 2026, title: "My Dearest Assassin",    thai: "เลือดรัก นักฆ่า",      tags: "Netflix Original",              youtube: "https://youtu.be/y1Qq_kPL5UU", poster: "images/posters/my-dearest-assassin.jpg" },
+        { year: 2026, title: "Omukade",                thai: "โอมุคาเดะ",           tags: "On Netflix",                       youtube: "https://youtu.be/enIpsJTMLUU", poster: "images/posters/omukade.jpg" },
 
-        { year: 2025, title: "Our House",              thai: "ข้างบ้าน",            tags: "On Netflix",                       youtube: "https://youtu.be/eWFlUmkrPcY" },
-        { year: 2025, title: "My Boo 2",               thai: "อนงค์ 2 สามสี่ชาติ",   tags: "On Netflix",                       youtube: "https://youtu.be/d8RyaeqPcvY" },
-        { year: 2025, title: "4 Tigers",               thai: "เสือ",               tags: "On TrueVisions",                   youtube: "https://youtu.be/NbYwrVt_bEM" },
-        { year: 2025, title: "Death Whisperer 3",      thai: "ธี่หยด 3",            tags: "IMAX | On Netflix",                youtube: "https://youtu.be/PvPx0Tdmf2I" },
-        { year: 2025, title: "ATTACK 13",              thai: "วิญญาณเลขที่ 13",     tags: "On Netflix",                       youtube: "https://youtu.be/SOYPznKC0Lw" },
-        { year: 2025, title: "Eternal Bond",           thai: "นาคบรรพ์",           tags: "On Netflix",                       youtube: "https://youtu.be/K71IDmM3V8o" },
+        { year: 2025, title: "Our House",              thai: "ข้างบ้าน",            tags: "On Netflix",                       youtube: "https://youtu.be/eWFlUmkrPcY", poster: "images/posters/our-house.jpg" },
+        { year: 2025, title: "My Boo 2",               thai: "อนงค์ 2 สามสี่ชาติ",   tags: "On Netflix",                       youtube: "https://youtu.be/d8RyaeqPcvY", poster: "images/posters/my-boo-2.jpg" },
+        { year: 2025, title: "4 Tigers",               thai: "เสือ",               tags: "On TrueVisions",                   youtube: "https://youtu.be/NbYwrVt_bEM", poster: "images/posters/4-tigers.jpg" },
+        { year: 2025, title: "Death Whisperer 3",      thai: "ธี่หยด 3",            tags: "IMAX | On Netflix",                youtube: "https://youtu.be/PvPx0Tdmf2I", poster: "images/posters/death-whisperer-3.jpg" },
+        { year: 2025, title: "ATTACK 13",              thai: "วิญญาณเลขที่ 13",     tags: "On Netflix",                       youtube: "https://youtu.be/SOYPznKC0Lw", poster: "images/posters/attack-13.jpg" },
+        { year: 2025, title: "Eternal Bond",           thai: "นาคบรรพ์",           tags: "On Netflix",                       youtube: "https://youtu.be/K71IDmM3V8o", poster: "images/posters/eternal-bond.jpg" },
 
-        { year: 2024, title: "The Cliche",             thai: "คุณชายน์",           tags: "On Netflix",                       youtube: "https://youtu.be/8AesDdVxNkM" },
-        { year: 2024, title: "Death Whisperer 2",      thai: "ธี่หยด 2",            tags: "IMAX | On Netflix",                youtube: "https://youtu.be/ZCEuUcE9oZw" },
-        { year: 2024, title: "Bangkok Breaking",       thai: "ฝ่านรกเมืองเทวดา",    tags: "Netflix Original",              youtube: "https://youtu.be/ObLf5KH465A" },
-        { year: 2024, title: "Taklee Genesis",         thai: "ตาคลี เจเนซิส",       tags: "IMAX | On Prime Video",            youtube: "https://youtu.be/N2Kb-yjXKxA" },
-        { year: 2024, title: "The Cursed Land",        thai: "แดนสาป",             tags: "On Netflix",                       youtube: "https://youtu.be/y8wNrzEMayI" },
-        { year: 2024, title: "Doctor Climax",          thai: "ปุจฉาพาเสียว",        tags: "Netflix Original | 8 Episodes", youtube: "https://youtu.be/KeUm_2u4hNk" },
-        { year: 2024, title: "My Boo",                 thai: "อนงค์",              tags: "On Netflix",                       youtube: "https://youtu.be/I1hy3yLdvtE" },
+        { year: 2024, title: "The Cliche",             thai: "คุณชายน์",           tags: "On Netflix",                       youtube: "https://youtu.be/8AesDdVxNkM", poster: "images/posters/the-cliche.jpg" },
+        { year: 2024, title: "Death Whisperer 2",      thai: "ธี่หยด 2",            tags: "IMAX | On Netflix",                youtube: "https://youtu.be/ZCEuUcE9oZw", poster: "images/posters/death-whisperer-2.jpg" },
+        { year: 2024, title: "Bangkok Breaking",       thai: "ฝ่านรกเมืองเทวดา",    tags: "Netflix Original",              youtube: "https://youtu.be/ObLf5KH465A", poster: "images/posters/bangkok-breaking.jpg" },
+        { year: 2024, title: "Taklee Genesis",         thai: "ตาคลี เจเนซิส",       tags: "IMAX | On Prime Video",            youtube: "https://youtu.be/N2Kb-yjXKxA", poster: "images/posters/taklee-genesis.jpg" },
+        { year: 2024, title: "The Cursed Land",        thai: "แดนสาป",             tags: "On Netflix",                       youtube: "https://youtu.be/y8wNrzEMayI", poster: "images/posters/the-cursed-land.jpg" },
+        { year: 2024, title: "Doctor Climax",          thai: "ปุจฉาพาเสียว",        tags: "Netflix Original | 8 Episodes", youtube: "https://youtu.be/KeUm_2u4hNk", poster: "images/posters/doctor-climax.jpg" },
+        { year: 2024, title: "My Boo",                 thai: "อนงค์",              tags: "On Netflix",                       youtube: "https://youtu.be/I1hy3yLdvtE", poster: "images/posters/my-boo.jpg" },
 
-        { year: 2023, title: "Analog Squad",           thai: "ทีมรักนักหลอก",       tags: "Netflix Original | 8 Episodes", youtube: "https://youtu.be/m6KAeB8Or10" },
-        { year: 2023, title: "The X-Treme Riders",     thai: "ปล้นทะลุไมล์",        tags: "On Prime Video",                   youtube: "https://youtu.be/7aoDd5iIeFU" },
-        { year: 2023, title: "Death Whisperer",        thai: "ธี่หยด",              tags: "IMAX | On Netflix",                youtube: "https://youtu.be/avtdfHis_3k" },
-        { year: 2023, title: "Inhuman Kiss 2",         thai: "แสงกระสือ 2",         tags: "On Netflix",                       youtube: "https://youtu.be/1II0U1_dKWk" },
+        { year: 2023, title: "Analog Squad",           thai: "ทีมรักนักหลอก",       tags: "Netflix Original | 8 Episodes", youtube: "https://youtu.be/m6KAeB8Or10", poster: "images/posters/analog-squad.jpg" },
+        { year: 2023, title: "The X-Treme Riders",     thai: "ปล้นทะลุไมล์",        tags: "On Prime Video",                   youtube: "https://youtu.be/7aoDd5iIeFU", poster: "images/posters/the-x-treme-riders.jpg" },
+        { year: 2023, title: "Death Whisperer",        thai: "ธี่หยด",              tags: "IMAX | On Netflix",                youtube: "https://youtu.be/avtdfHis_3k", poster: "images/posters/death-whisperer.jpg" },
+        { year: 2023, title: "Inhuman Kiss 2",         thai: "แสงกระสือ 2",         tags: "On Netflix",                       youtube: "https://youtu.be/1II0U1_dKWk", poster: "images/posters/inhuman-kiss-2.jpg" },
 
-        { year: 2022, title: "The One Hundred",        thai: "๑๐๐ ร้อยขา",          tags: "On Prime Video",                   youtube: "https://youtu.be/jHghvHMTDXU" },
-        { year: 2022, title: "Leio",                   thai: "ไลโอโคตรแย้ยักษ์",      tags: "On Netflix",                       youtube: "https://youtu.be/oZq-5AnslPM" },
+        { year: 2022, title: "The One Hundred",        thai: "๑๐๐ ร้อยขา",          tags: "On Prime Video",                   youtube: "https://youtu.be/jHghvHMTDXU", poster: "images/posters/the-one-hundred.jpg" },
+        { year: 2022, title: "Leio",                   thai: "ไลโอโคตรแย้ยักษ์",      tags: "On Netflix",                       youtube: "https://youtu.be/oZq-5AnslPM", poster: "images/posters/leio.jpg" },
       ],
     },
     {
