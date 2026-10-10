@@ -395,9 +395,8 @@ footer { margin-top: 48px; display: flex; justify-content: space-between; flex-w
     const films = job.films || [];
     if (!films.length) return "";
     const years = [...new Set(films.map(f => f.year))].sort((a, b) => b - a);
-    // ค่าเริ่มต้นของตัวกรอง = ปีปัจจุบัน (ถ้าปีนี้ยังไม่มีผลงาน ใช้ปีล่าสุดที่มี)
-    const thisYear = new Date().getFullYear();
-    const def = years.length > 1 ? (years.includes(thisYear) ? thisYear : years[0]) : "All";
+    // ค่าเริ่มต้นของตัวกรอง = All (แสดงทุกปี)
+    const def = "All";
     const filters = years.length > 1
       ? `<div class="filters" role="group" aria-label="Filter by year" data-job="${idx}">
            ${["All", ...years].map((y, i) => `<button type="button" id="f-${idx}-${y}" data-f="${y}" aria-pressed="${y === def}">${y}</button>`).join("")}
